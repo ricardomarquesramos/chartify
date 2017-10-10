@@ -1,3 +1,91 @@
-<div>
-  Hello world wtf
-</div>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Chartify!!!111</h1>
+        <img width="50" height="50" src="https://appstickers-cdn.appadvice.com/1139426125/818333349/5dadd26571c0ffe4cb6f7298392d424b-5.gif" />
+        <img width="50" height="50" src="https://appstickers-cdn.appadvice.com/1139426125/818333349/5dadd26571c0ffe4cb6f7298392d424b-5.gif" />
+        <img width="50" height="50" src="https://appstickers-cdn.appadvice.com/1139426125/818333349/5dadd26571c0ffe4cb6f7298392d424b-5.gif" />
+        <img width="50" height="50" src="https://appstickers-cdn.appadvice.com/1139426125/818333349/5dadd26571c0ffe4cb6f7298392d424b-5.gif" />
+        <img width="50" height="50" src="https://appstickers-cdn.appadvice.com/1139426125/818333349/5dadd26571c0ffe4cb6f7298392d424b-5.gif" />
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="col-md-4">
+        <label for="basic-url">Encoded chart settings</label>
+        <div class="input-group">
+          <textarea class="form-control" id="chartParams" rows="25" cols="140">
+{
+  "series": [
+    {
+      "value": 5.25,
+      "label": "Blue"
+    },
+    {
+      "value": 4.88,
+      "label": "Green"
+    },
+    {
+      "value": 4.74,
+      "label": "Gray"
+    },
+    {
+      "value": 3.22,
+      "label": "Orange"
+    }
+  ],
+  "statistic": "percentage"
+}
+          </textarea>
+        </div>
+        <div class="input-group">
+          <button class="btn btn-default" onclick="generateImage()">Generate</button>
+        </div>
+      </div>
+      <div class="col-md-8" id="imagesContainer"></div>
+    </div>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+
+  <script>
+    function generateImage() {
+      var input = document.getElementById('chartParams')
+      var coded = btoa(input.value)
+
+      var src = '/bar/' + coded
+
+      createImage(src)
+    }
+
+    function createImage(url) {
+      var imageId = 'generatedImage'
+      console.log('trigger')
+      if (document.getElementById(imageId)) {
+        document.getElementById(imageId).remove();
+      }
+
+      var img = document.createElement('img')
+      img.setAttribute('src', url)
+      img.setAttribute('id', imageId)
+      img.setAttribute('width', 680)
+      img.setAttribute('width', 480)
+
+      document.getElementById("imagesContainer").appendChild(img)
+    }
+  </script>
+</html>
+

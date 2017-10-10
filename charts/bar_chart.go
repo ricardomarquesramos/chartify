@@ -36,8 +36,9 @@ func buildChartSeries(series []Series) *[]chart.Value {
 
 func buildBarChart(chartSeries *[]chart.Value) *chart.BarChart {
 	barChart := chart.BarChart{
-		Height:   512,
-		BarWidth: 60,
+		Height:   600,
+		Width:    700,
+		BarWidth: 28,
 		XAxis: chart.Style{
 			Show: true,
 		},
