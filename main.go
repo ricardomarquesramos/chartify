@@ -11,6 +11,8 @@ func main() {
 	e := echo.New()
 	api.Router(e)
 
+	e.File("/", "public/demo.html")
+
 	port := ":" + os.Getenv("PORT")
 	e.Logger.Fatal(e.Start(port))
 }
