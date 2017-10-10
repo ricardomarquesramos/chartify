@@ -1,1 +1,1 @@
-web: go-chartify
+web: chartify
