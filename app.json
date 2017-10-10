@@ -1,0 +1,11 @@
+{
+  "name": "Go Chartify",
+  "description": "Excaly POCTHAT",
+  "keywords": [
+    "go-chartify"
+  ],
+  "image": "heroku/go:1.6",
+  "mount_dir": "src/github.com/ricardomarquesramos/chartify",
+  "website": "http://github.com/ricardomarquesramos/chartify",
+  "repository": "http://github.com/ricardomarquesramos/chartify"
+}
