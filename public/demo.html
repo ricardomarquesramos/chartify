@@ -57,35 +57,34 @@
       </div>
       <div class="col-md-8" id="imagesContainer"></div>
     </div>
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      <script>
+          function generateImage() {
+            var input = document.getElementById('chartParams')
+            var coded = btoa(input.value)
+
+            var src = '/bar/' + coded
+
+            createImage(src)
+          }
+
+          function createImage(url) {
+            var imageId = 'generatedImage'
+
+            if (document.getElementById(imageId)) {
+              document.getElementById(imageId).remove();
+            }
+
+            var img = document.createElement('img')
+            img.setAttribute('src', url)
+            img.setAttribute('id', imageId)
+            img.setAttribute('width', 680)
+            img.setAttribute('width', 480)
+
+            document.getElementById("imagesContainer").appendChild(img)
+          }
+        </script>
   </body>
 
-  <script>
-    function generateImage() {
-      var input = document.getElementById('chartParams')
-      var coded = btoa(input.value)
 
-      var src = '/bar/' + coded
-
-      createImage(src)
-    }
-
-    function createImage(url) {
-      var imageId = 'generatedImage'
-      console.log('trigger')
-      if (document.getElementById(imageId)) {
-        document.getElementById(imageId).remove();
-      }
-
-      var img = document.createElement('img')
-      img.setAttribute('src', url)
-      img.setAttribute('id', imageId)
-      img.setAttribute('width', 680)
-      img.setAttribute('width', 480)
-
-      document.getElementById("imagesContainer").appendChild(img)
-    }
-  </script>
 </html>
 
