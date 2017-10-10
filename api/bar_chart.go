@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ricardomarquesramos/charttaker/charts"
+	"github.com/ricardomarquesramos/chartify/charts"
 
 	"github.com/labstack/echo"
 	//exposes "chart"

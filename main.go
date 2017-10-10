@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/labstack/echo"
-	"github.com/ricardomarquesramos/charttaker/api"
+	"github.com/ricardomarquesramos/chartify/api"
 )
 
 func main() {
