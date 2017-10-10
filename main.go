@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/labstack/echo"
 	"github.com/ricardomarquesramos/chartify/api"
 )
@@ -9,5 +11,6 @@ func main() {
 	e := echo.New()
 	api.Router(e)
 
-	e.Logger.Fatal(e.Start(":80"))
+	port := ":" + os.Getenv("PORT")
+	e.Logger.Fatal(e.Start(port))
 }
